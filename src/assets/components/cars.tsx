@@ -1,3 +1,5 @@
+import "./style.css";
+
 export type Carro = {
   id: number | string;
   marca: string;
@@ -15,6 +17,9 @@ export const Cars: React.FC<Props> = ({ carros }) => {
       <h2>Cars components</h2>
       {carros.map((car) => (
         <div
+          className={
+            car.marca === "Chevrolet" ? "classePreta" : "classeVermelha"
+          }
           key={car.id}
           style={{
             border: "2px solid red",
